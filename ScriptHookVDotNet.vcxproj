@@ -76,7 +76,8 @@
       <AdditionalDependencies>ScriptHookV.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(TargetPath)" "$(TargetDir)$(TargetName).asi"</Command>
+      <Command>copy "$(TargetPath)" "$(TargetDir)$(TargetName).asi"
+copy "$(TargetPath)" "C:\Users\Quick\Documents\Visual Studio 2013\Projects\GTA5Mods\References"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
