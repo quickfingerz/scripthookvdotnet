@@ -4,6 +4,15 @@
 
 namespace GTA
 {
+	public enum class Font
+	{
+		ChaletLondon = 0,
+		HouseScript = 1,
+		Monospace = 2,
+		ChaletComprimeCologne = 4,
+		Pricedown = 7
+	};
+
 	public ref class UI sealed abstract
 	{
 	public:

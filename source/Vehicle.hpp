@@ -165,6 +165,8 @@ namespace GTA
 		MatteFoliageGreen = 155,
 		DefaultAlloyColor = 156,
 		EpsilonBlue = 157,
+		PureGold = 158,
+		BrushedGold = 159,
 	};
 	public enum class VehicleDoor
 	{
@@ -342,6 +344,16 @@ namespace GTA
 			VehicleColor get();
 			void set(VehicleColor value);
 		}
+		property VehicleColor RimColor
+		{
+			VehicleColor get();
+			void set(VehicleColor value);
+		}
+		property VehicleColor PearlescentColor
+		{
+			VehicleColor get();
+			void set(VehicleColor value);
+		}
 		property VehicleWheelType WheelType
 		{
 			VehicleWheelType get();
@@ -372,6 +384,15 @@ namespace GTA
 		property bool LightsOn
 		{
 			void set(bool value);
+			bool get();
+		}
+		property bool HighBeamsOn
+		{
+			bool get();
+		}
+		property float LightsMultiplier
+		{
+			void set(float value);
 		}
 		property bool BrakeLightsOn
 		{
@@ -409,6 +430,7 @@ namespace GTA
 		}
 		property bool CanTiresBurst
 		{
+			bool get();
 			void set(bool value);
 		}
 		property bool CanBeVisiblyDamaged
@@ -421,10 +443,12 @@ namespace GTA
 		}
 		property System::Drawing::Color CustomPrimaryColor
 		{
+			System::Drawing::Color get();
 			void set(System::Drawing::Color color);
 		}
 		property System::Drawing::Color CustomSecondaryColor
 		{
+			System::Drawing::Color get();
 			void set(System::Drawing::Color color);
 		}
 		property System::Drawing::Color NeonLightsColor
@@ -451,6 +475,9 @@ namespace GTA
 		void SetMod(VehicleMod modType, int modIndex, bool variations);
 		void ToggleMod(VehicleToggleMod toggleMod, bool toggle);
 		bool IsToggleModOn(VehicleToggleMod toggleMod);
+		System::String ^GetModTypeName(VehicleMod modType);
+		System::String ^GetToggleModTypeName(VehicleToggleMod toggleModType);
+		System::String ^GetModName(VehicleMod modType, int modValue);
 		void ClearCustomPrimaryColor();
 		void ClearCustomSecondaryColor();
 		Ped ^GetPedOnSeat(VehicleSeat seat);
@@ -475,6 +502,7 @@ namespace GTA
 		bool IsTireBurst(int wheel);
 		void BurstTire(int wheel);
 		void FixTire(int wheel);
+		bool IsInBurnout();
 
 		Ped ^CreatePedOnSeat(VehicleSeat seat, GTA::Model model);
 		Ped ^CreateRandomPedOnSeat(VehicleSeat seat);
